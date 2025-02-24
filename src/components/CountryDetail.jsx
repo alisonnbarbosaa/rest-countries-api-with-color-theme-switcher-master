@@ -19,10 +19,14 @@ export default function CountryDetail() {
 
   return (
     <section className="px-12">
-      <Link to="/" className="h-20 w-20 flex items-center gap-2 font-bold">
-        <IoMdArrowRoundBack />
-        Back
-      </Link>
+      <div className="h-20 flex items-center">
+        <Link to="/">
+          <button className="w-20 flex items-center gap-2 font-bold dark:bg-slate-800 bg-slate-200 p-2 rounded-lg">
+            <IoMdArrowRoundBack />
+            Back
+          </button>
+        </Link>
+      </div>
       <div className="flex justify-center items-center gap-12">
         <div className="w-1/2">
           <img src={country.flags.svg} alt={country.flags.alt} />
