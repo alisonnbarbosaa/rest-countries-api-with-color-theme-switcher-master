@@ -39,18 +39,22 @@ export default function Home() {
 
   return (
     <div>
-      <header className="h-16 flex flex-col justify-around">
+      <header className="h-20 flex flex-col justify-around">
         <div className="flex justify-between px-12">
-          <label className="flex gap-2 items-center">
+          <label className="flex gap-2 items-center dark:bg-slate-800">
             <IoIosSearch />
             <input
               type="text"
               placeholder="Search for a country..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
+              className="bg-transparent"
             />
           </label>
-          <select onChange={(e) => filterByRegion(e.target.value)}>
+          <select
+            onChange={(e) => filterByRegion(e.target.value)}
+            className="dark:bg-slate-800"
+          >
             <option selected disabled>
               Filter by Region
             </option>
@@ -65,7 +69,7 @@ export default function Home() {
       <section className="flex flex-wrap justify-center gap-12">
         {filteredCountries.map((countries) => (
           <Link key={countries.cca3} to={`/country/${countries.cca3}`}>
-            <div className="w-72 flex flex-col items-center gap-4 pb-4 rounded-sm">
+            <div className="w-72 flex flex-col items-center gap-4 pb-4 rounded-sm dark:bg-slate-800">
               <img
                 src={countries.flags.svg}
                 alt={countries.flags.alt}

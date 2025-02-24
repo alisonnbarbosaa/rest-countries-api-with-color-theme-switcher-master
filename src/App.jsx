@@ -2,16 +2,22 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import CountryDetail from "./components/CountryDetail";
 import { FaMoon } from "react-icons/fa";
+import useDarkMode from "./hooks/useDarkMode";
 
 function App() {
+  const { theme, toggleTheme } = useDarkMode();
+
   return (
-    <div>
-      <header className="h-16 flex flex-col justify-around">
+    <div className="dark:bg-slate-900 dark:text-slate-200">
+      <header className="h-16 flex flex-col justify-around dark:bg-slate-800">
         <div className="flex justify-between px-12">
           <h1 className="font-bold text-2xl">Where in the world?</h1>
-          <button className="font-bold cursor-pointer flex gap-2 items-center">
+          <button
+            className="font-bold cursor-pointer flex gap-2 items-center"
+            onClick={toggleTheme}
+          >
             <FaMoon />
-            Dark Mode
+            {theme === "dark" ? "Dark Mode" : "light Mode"}
           </button>
         </div>
       </header>
