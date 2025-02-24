@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { IoIosSearch } from "react-icons/io";
 
 export default function Home() {
+  //testando a branch
   const [countries, setCountries] = useState([]);
   const [filteredCountries, setFilteredCountries] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
