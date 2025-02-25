@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
-import CountryDetail from "./components/CountryDetail";
+import Home from "./pages/Home";
+import CountryDetail from "./pages/CountryDetail";
 import { FaMoon, FaSun } from "react-icons/fa";
 import useDarkMode from "./hooks/useDarkMode";
 
